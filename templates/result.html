@@ -1,0 +1,24 @@
+<!-- result.html -->
+
+{% for log in logs %}
+
+<div class="log">
+
+  <div class="metadata">
+    <span class="label">Level:</span> {{ log.level }}
+    <span class="label">Message:</span> {{ log.message }}
+    <span class="label">Resource ID:</span> {{ log.resourceId }}
+    <!-- etc... -->
+  </div>
+
+  <pre class="details">
+    {{ log | tojson }} 
+  </pre>
+
+</div>
+
+{% else %}
+
+<p>No logs found.</p>
+
+{% endfor %}

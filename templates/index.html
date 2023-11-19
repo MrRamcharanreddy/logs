@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Query Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename=stylesheet) }}">
+</head>
+<body>
+    <h1>Log Query Interface</h1>
+    <form action="{{ url_for('search_logs') }}" method="post">
+        <label for="query">Search:</label>
+        <input type="text" name="query" id="query">
+        <label for="level">Level:</label>
+        <input type="text" name="level" id="level">
+        <label for="message">Message:</label>
+        <input type="text" name="message" id="message">
+        <label for="resourceId">Resource ID:</label>
+        <input type="text" name="resourceId" id="resourceId">
+        <label for="timestamp">Timestamp:</label>
+        <input type="text" name="timestamp" id="timestamp">
+        <!-- Add other fields based on the specified filters -->
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
